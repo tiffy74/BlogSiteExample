@@ -9,11 +9,12 @@
 }
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="mt-4"><a href="@Url.Action("BlogPost", "Blog", new { id = Model.id })">@Model.title</a></h1>
         <hr>
         <p>Posted on @Model.date</p>
         <hr>
-        <img class="blogimg" src="@Model.image" />
+        <div class="col-lg-10"><img class="blogimg img-fluid" src="@Model.image" /></div>
+        <h1 class="mt-4"><strong>@Model.title</strong></h1>
+        <p>Posted on @Model.date</p>
         <hr>
         <p class="blogtxt">@Html.Raw(Model.htmlContent)</p>
     </div>

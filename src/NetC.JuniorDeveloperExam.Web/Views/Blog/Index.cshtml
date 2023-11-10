@@ -6,19 +6,26 @@
 }
 
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 col-md-12">
         <h1 class="mt-4">Blog Posts</h1>
-        <hr>
+        
         <ul>
             @foreach (var item in Model)
             {
                 foreach (var blogPost in item.blogPosts)
                 {
-                    <H1><a href="@Url.Action("BlogPost", "Blog", new { id = blogPost.id})">@blogPost.title</a></H1>
-                    <p>@blogPost.date</p>
-                    <HR />
-                }
 
+                    <div class="row mb-4">
+                        <div class="col-lg-8 col-md-8">
+                            <H2><a href="@Url.Action("BlogPost", "Blog", new { id = blogPost.id})">@blogPost.title</a></H2>
+                            <p>@blogPost.date</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <img src="@blogPost.image" class="img-fluid" alt="" />
+                        </div>
+                    </div>
+                    <hr>
+                }
             }
         </ul>
     </div>
